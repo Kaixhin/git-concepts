@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Git Concepts</title>
+    <meta name="description" content="Git Concepts">
+    <meta name="author" content="Kaixhin <design@kaixhin.com>">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/moon.css" id="theme">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Git Concepts</h1>
+        </section>
+        <section>
+          <h2>Why Git?</h2>
+          <p>Free</p>
+          <p>Open source</p>
+          <p>Fast</p>
+          <p>Small</p>
+          <p>Backups (implicitly)</p>
+          <p>Collaborate</p>
+        </section>
+        <section>
+          <h2>Version Control System</h2>
+          <p class="fragment">Snapshots in time</p>
+          <p class="fragment">Choose what changes to track</p>
+          <p class="fragment">Add meaning with messages</p>
+          <p class="fragment">Branch out</p>
+        </section>
+        <section>
+          <h2>Distributed Version Control System</h2>
+          <p class="fragment">Share copies of history</p>
+          <p class="fragment">Merge work</p>
+          <p class="fragment">No single point of failure</p>
+        </section>
+        <section>
+          <h2>Repositories</h2>
+          <div class="fragment">
+            <p>Create</p>
+              <pre><code>git init</code></pre>
+            <p>Clone</p>
+              <pre><code>git clone &lt;username&gt;@&lt;host&gt;:&lt;repository path&gt;</code></pre>
+          </div>
+          <div class="fragment">
+            <p>Status</p>
+              <pre><code>git status</code></pre>
+            <p>History</p>
+              <pre><code>git log --graph --oneline</code></pre>
+          </div>
+        </section>
+        <section>
+          <h2>Working Areas</h2>
+          <p class="fragment">Working Directory</p>
+          <div class="fragment">
+            <p>&darr;</p>
+              <pre><code>git add &lt;files&gt;</code></pre>
+            <p>&darr;</p>
+            <p>Index (staging area)</p>
+          </div>
+          <div class="fragment">
+            <p>&darr;</p>
+              <pre><code>git commit -m "&lt;message&gt;"</code></pre>
+            <p>&darr;</p>
+            <p>HEAD (last commit of branch)</p>
+          </div>
+        </section>
+        <section>
+          <h2>Branches</h2>
+          <p class="fragment">Default branch is <strong>master</strong></p>
+          <div class="fragment">
+            <p>Create</p>
+              <pre><code>git branch &lt;branch&gt;</code></pre>
+          </div>
+          <div class="fragment">
+            <p>Switch</p>
+              <pre><code>git checkout &lt;branch&gt;</code></pre>
+          </div>         
+          <div class="fragment">
+            <p>Merge</p>
+              <pre><code>git merge &lt;branch&gt;</code></pre>
+          </div>   
+          <div class="fragment">
+            <p>Delete</p>
+              <pre><code>git branch -d &lt;branch&gt;</code></pre>
+          </div>
+        </section>
+        <section>
+          <h2>Remote Repos</h2>
+          <p class="fragment">Default server is <strong>origin</strong></p>
+          <div class="fragment">
+            <p>Add</p>
+              <pre><code>git remote add &lt;server&gt; &lt;server path&gt;</code></pre>
+          </div>
+          <div class="fragment">
+            <p>Push</p>
+              <pre><code>git push &lt;server&gt; &lt;branch&gt;</code></pre>
+          </div>         
+          <div class="fragment">
+            <p>Pull (fetch and merge)</p>
+              <pre><code>git pull &lt;server&gt; &lt;branch&gt;</code></pre>
+          </div>   
+        </section>
+        <section>
+          <h2>Undoing Changes</h2>
+          <div class="fragment">
+            <p>Unstage</p>
+              <pre><code>git reset HEAD &lt;filename&gt;</code></pre>
+          </div>
+          <div class="fragment">
+            <p>Revert file to state at HEAD</p>
+              <pre><code>git checkout -- &lt;filename&gt;</code></pre>
+          </div>         
+          <div class="fragment">
+            <p>Revert all files to state at HEAD</p>
+              <pre><code>git reset --hard</code></pre>
+          </div>   
+          <p class="fragment"><strong>Disclaimer:</strong> Changing history may lead to time paradoxes...</p>
+        </section>
+        <section>
+          <h2>Useful Links</h2>
+          <p>Online tutorial: <a href="https://try.github.io" target="_blank">Try Git</a></p>
+          <p>In-depth tutorial: <a href="http://gitimmersion.com" target="_blank">Git Immersion</a></p>
+          <p>Quick guide: <a href="https://rogerdudler.github.io/git-guide/" target="_blank">git - the simple guide</a></p>
+          <p>Alternative perspective: <a href="http://tom.preston-werner.com/2009/05/19/the-git-parable.html" target="_blank">The Git Parable</a></p>
+          <p>Repo hosting: <a href="https://bitbucket.org" target="_blank">Bitbucket</a></p>
+        </section>
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+    <script>
+      Reveal.initialize({
+        history: true,
+        center: false,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'cube', // default/cube/page/concave/zoom/linear/fade/none
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          // Remote control your reveal.js presentation using a touch device
+          { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+  </body>
+</html>
