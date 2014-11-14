@@ -10,6 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/reveal.min.css">
     <link rel="stylesheet" href="css/theme/moon.css" id="theme">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
   </head>
@@ -130,6 +140,8 @@
           <p>In-depth tutorial: <a href="http://gitimmersion.com" target="_blank">Git Immersion</a></p>
           <p>Quick guide: <a href="https://rogerdudler.github.io/git-guide/" target="_blank">git - the simple guide</a></p>
           <p>Alternative perspective: <a href="http://tom.preston-werner.com/2009/05/19/the-git-parable.html" target="_blank">The Git Parable</a></p>
+          <p>Development conventions: <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">A successful Git branching model</a></p>
+          <p>Ignoring files: <a href="https://github.com/github/gitignore" target="_blank">github/gitignore</a></p>
           <p>Repo hosting: <a href="https://bitbucket.org" target="_blank">Bitbucket</a></p>
         </section>
       </div>
